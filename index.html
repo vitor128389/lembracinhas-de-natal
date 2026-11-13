@@ -47,10 +47,10 @@ h2.t em{font-style:normal;color:var(--red)}
 .fan img{width:21%;max-width:190px;filter:drop-shadow(0 12px 18px rgba(110,30,20,.22));margin:0 -1.6%}
 .fan img:nth-child(1){transform:rotate(-9deg) translateY(16px)}.fan img:nth-child(2){transform:rotate(-4deg) translateY(4px)}.fan img:nth-child(3){transform:scale(1.14);z-index:3}.fan img:nth-child(4){transform:rotate(4deg) translateY(4px)}.fan img:nth-child(5){transform:rotate(9deg) translateY(16px)}
 .lead{color:var(--mut);font-size:15.5px;max-width:580px;margin:26px auto 22px}
-.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px;grid-auto-flow:dense}
-.gal div{background:var(--cream);border:1px solid var(--line);border-radius:18px;height:250px;display:flex;align-items:center;justify-content:center;padding:14px}
-.gal img{max-height:100%;width:auto;filter:drop-shadow(0 8px 14px rgba(110,30,20,.18))}
-.gal .w2{grid-column:span 2}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+.gal figure{margin:0;border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 10px 24px rgba(110,30,20,.12);position:relative}
+.gal img{display:block;width:100%;aspect-ratio:1;object-fit:cover}
+.gal figcaption{position:absolute;left:10px;bottom:10px;background:rgba(255,255,255,.92);color:var(--red);font-weight:700;font-size:13px;padding:5px 11px;border-radius:99px}
 .types{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;max-width:780px;margin:26px auto 0}
 .types div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px 16px;font-size:14.5px;display:flex;justify-content:space-between;gap:10px}
 .types b{color:var(--red);font-family:Fredoka,Poppins,sans-serif;font-size:17px;white-space:nowrap}
@@ -110,7 +110,7 @@ footer{text-align:center;font-size:12px;color:var(--mut);padding:26px 16px}
 .pop a.no{display:block;margin-top:12px;font-size:12.5px;color:#8f8580}
 @media (max-width:760px){
  section{padding:44px 0}.steps,.bonus{grid-template-columns:1fr}.uses{grid-template-columns:1fr 1fr}.types{grid-template-columns:1fr}
- .gal{grid-template-columns:repeat(2,1fr)}.gal div{height:190px}.plans{grid-template-columns:1fr}.plan.top{order:-1}.fan img{width:24%}.btn{font-size:16px;padding:16px 22px}
+ .gal{grid-template-columns:repeat(2,1fr);gap:10px}.gal figcaption{font-size:11px;left:6px;bottom:6px}.plans{grid-template-columns:1fr}.plan.top{order:-1}.fan img{width:24%}.btn{font-size:16px;padding:16px 22px}
 }
 </style>
 </head>
@@ -121,7 +121,7 @@ footer{text-align:center;font-size:12px;color:var(--mut);padding:26px 16px}
   <div class="badge">🎁 Escola · Empresa · Igreja · Família</div>
   <h1>Kit com <span>300 Modelos</span> de Lembrancinhas de Natal<small>prontas para imprimir, recortar e montar</small></h1>
   <div class="fan">
-    <img src="img/01-11.webp" alt="Tag de Natal"><img src="img/02-07.webp" alt="Tag redonda de Natal"><img src="img/05-06.webp" alt="Cartão de Natal"><img src="img/01-31.webp" alt="Tag de Natal"><img src="img/02-19.webp" alt="Tag redonda de Natal">
+    <img src="img/m/h1.webp" alt="Tag de Natal"><img src="img/m/h2.webp" alt="Tag de Natal"><img src="img/m/h3.webp" alt="Tag de Natal"><img src="img/m/h4.webp" alt="Tag de Natal"><img src="img/m/h5.webp" alt="Tag de Natal">
   </div>
   <p class="lead">Baixe, imprima e monte lembrancinhas lindas em poucos minutos: <b>tags, caixinhas, embalagens de chocolate, cartões e muito mais</b>. Perfeito para alunos, colaboradores, clientes, igreja, amigos e família.</p>
   <a class="btn pulse" href="#planos">Quero meu kit →</a>
@@ -130,24 +130,22 @@ footer{text-align:center;font-size:12px;color:var(--mut);padding:26px 16px}
 
 <section style="background:#fff;padding-top:46px"><div class="wrap">
   <h2 class="t">O que você vai <em>receber</em></h2>
-  <p class="sub">Alguns dos 300 modelos do kit, em 6 estilos de cor: Clássico, Floresta, Doce, Inverno, Kraft e Noite Dourada.</p>
-  <div class="gal"><div class="w2"><img src="img/04-11.webp" alt="Embalagem de chocolate de Natal" loading="lazy"></div><div class=""><img src="img/01-21.webp" alt="Tag de Natal de Natal" loading="lazy"></div><div class=""><img src="img/07-06.webp" alt="Rótulo de bombom de Natal" loading="lazy"></div><div class=""><img src="img/05-16.webp" alt="Cartão de Natal de Natal" loading="lazy"></div><div class="w2"><img src="img/03-07.webp" alt="Caixinha milk de Natal" loading="lazy"></div><div class=""><img src="img/02-25.webp" alt="Tag redonda de Natal" loading="lazy"></div><div class=""><img src="img/02-13.webp" alt="Tag redonda de Natal" loading="lazy"></div><div class=""><img src="img/08-07.webp" alt="Envelope de Natal" loading="lazy"></div><div class="w2"><img src="img/04-21.webp" alt="Embalagem de chocolate de Natal" loading="lazy"></div><div class=""><img src="img/01-41.webp" alt="Tag de Natal de Natal" loading="lazy"></div><div class=""><img src="img/05-26.webp" alt="Cartão de Natal de Natal" loading="lazy"></div><div class=""><img src="img/10-04.webp" alt="Plaquinha de Natal" loading="lazy"></div><div class=""><img src="img/07-21.webp" alt="Rótulo de pirulito de Natal" loading="lazy"></div></div>
+  <p class="sub">Alguns dos 300 modelos do kit, prontos para imprimir, recortar e presentear.</p>
+  <div class="gal"><figure><img src="img/m/m01-tags-classicas.webp" alt="Tags clássicas" loading="lazy"><figcaption>Tags clássicas</figcaption></figure><figure><img src="img/m/m02-tags-redondas.webp" alt="Tags redondas com laço" loading="lazy"><figcaption>Tags redondas com laço</figcaption></figure><figure><img src="img/m/m03-embalagens-chocolate.webp" alt="Embalagens de chocolate" loading="lazy"><figcaption>Embalagens de chocolate</figcaption></figure><figure><img src="img/m/m04-tags-bola.webp" alt="Tags bola de Natal" loading="lazy"><figcaption>Tags bola de Natal</figcaption></figure><figure><img src="img/m/m05-tags-cristas.webp" alt="Tags cristãs" loading="lazy"><figcaption>Tags cristãs</figcaption></figure><figure><img src="img/m/m06-etiquetas-barbante.webp" alt="Etiquetas com barbante" loading="lazy"><figcaption>Etiquetas com barbante</figcaption></figure><figure><img src="img/m/m07-formatos-especiais.webp" alt="Tags estrela, gorro, bengala e meia" loading="lazy"><figcaption>Tags estrela, gorro, bengala e meia</figcaption></figure><figure><img src="img/m/m08-toppers-rotulos.webp" alt="Toppers e rótulos" loading="lazy"><figcaption>Toppers e rótulos</figcaption></figure><figure><img src="img/m/m09-plaquinhas-ceia.webp" alt="Plaquinhas da ceia" loading="lazy"><figcaption>Plaquinhas da ceia</figcaption></figure><figure><img src="img/m/m10-cartoes-alunos.webp" alt="Cartões para alunos" loading="lazy"><figcaption>Cartões para alunos</figcaption></figure><figure><img src="img/m/m11-cartela-pet.webp" alt="Cartela pet" loading="lazy"><figcaption>Cartela pet</figcaption></figure><figure><img src="img/m/m12-tags-arvore.webp" alt="Tags árvore de Natal" loading="lazy"><figcaption>Tags árvore de Natal</figcaption></figure></div>
 </div></section>
 
 <section><div class="wrap">
   <h2 class="t"><em>300 modelos</em> exclusivos de lembrancinhas</h2>
-  <p class="sub">Cada página vem com várias cópias do mesmo modelo: ideal para a turma, a equipe ou a família inteira.</p>
+  <p class="sub">Folhas A4 em PDF, prontas para imprimir em casa ou na papelaria. Ideal para a turma, a equipe ou a família inteira.</p>
   <div class="types">
-    <div>🏷️ Tags retangulares (5 x 8 cm)<b>60</b></div>
-    <div>⭕ Tags redondas (6 cm)<b>40</b></div>
-    <div>🍫 Embalagens para barrinha de chocolate<b>30</b></div>
-    <div>💌 Cartões de Natal (10 x 14 cm)<b>30</b></div>
-    <div>📖 Marca-páginas<b>30</b></div>
-    <div>🍬 Rótulos para bombom e pirulito<b>30</b></div>
-    <div>🛍️ Toppers para saquinho<b>30</b></div>
-    <div>📦 Caixinhas milk<b>20</b></div>
-    <div>✉️ Envelopes<b>20</b></div>
-    <div>🖼️ Plaquinhas e cartazes A4<b>10</b></div>
+    <div>🏷️ Tags retangulares (clássicas, cristãs, escola, empresa, família, ano novo, polaroid e para colorir)<b>101</b></div>
+    <div>⭐ Tags em formatos especiais (redonda com laço, bola, etiqueta, árvore, estrela, gorro, meia, bengala)<b>46</b></div>
+    <div>🍬 Rótulos para bombom e brigadeiro (clássicos, cristãos, kraft e ano novo)<b>80</b></div>
+    <div>🧁 Toppers para cupcake e saquinho<b>24</b></div>
+    <div>🍫 Embalagens e faixas para chocolate<b>18</b></div>
+    <div>📦 Caixinhas e moldes (milk, pirâmide, cubo, travesseiro, casinha, sacolinha, envelope)<b>9</b></div>
+    <div>💌 Cartões, mini cartões para alunos e marca-páginas<b>16</b></div>
+    <div>🎄 Calendário 2027, Saúde/Paz/Amor/União, cartela pet e plaquinhas da ceia<b>9</b></div>
   </div>
 </div></section>
 
@@ -191,7 +189,7 @@ footer{text-align:center;font-size:12px;color:var(--mut);padding:26px 16px}
       <div class="price"><small>R$</small> 4,90</div><div class="unit">pagamento único</div>
       <ul>
         <li><b>100 modelos</b> de tags</li>
-        <li>60 tags retangulares + 40 redondas</li>
+        <li>Tags clássicas, cristãs, escola, empresa, família e ano novo</li>
         <li>PDF pronto para imprimir</li>
         <li>Acesso imediato por e-mail</li>
         <li class="no">Caixinhas, embalagens, cartões e mais 200 modelos</li>
@@ -205,9 +203,9 @@ footer{text-align:center;font-size:12px;color:var(--mut);padding:26px 16px}
       <div class="price"><small>R$</small> 12,90</div><div class="unit">pagamento único · cerca de R$ 0,04 por modelo</div>
       <ul>
         <li><b>300 modelos</b> de lembrancinhas</li>
-        <li>Tags, caixinhas milk, embalagens de chocolate</li>
-        <li>Cartões, marca-páginas, rótulos e toppers</li>
-        <li>Envelopes, plaquinhas e cartazes</li>
+        <li>Tags em 10 formatos diferentes</li><li>Caixinhas milk, pirâmide, cubo e casinha</li>
+        <li>Embalagens de chocolate, rótulos e toppers</li>
+        <li>Cartões, calendário 2027 e plaquinhas</li>
         <li>Bônus: 100 Mensagens de Natal</li>
         <li>Bônus: Guia de Impressão e Montagem</li>
         <li>Bônus: Kit Revenda</li>
