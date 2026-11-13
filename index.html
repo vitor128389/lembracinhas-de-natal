@@ -47,16 +47,11 @@ h2.t em{font-style:normal;color:var(--red)}
 .fan img{width:21%;max-width:190px;filter:drop-shadow(0 12px 18px rgba(110,30,20,.22));margin:0 -1.6%}
 .fan img:nth-child(1){transform:rotate(-9deg) translateY(16px)}.fan img:nth-child(2){transform:rotate(-4deg) translateY(4px)}.fan img:nth-child(3){transform:scale(1.14);z-index:3}.fan img:nth-child(4){transform:rotate(4deg) translateY(4px)}.fan img:nth-child(5){transform:rotate(9deg) translateY(16px)}
 .lead{color:var(--mut);font-size:15.5px;max-width:580px;margin:26px auto 22px}
-.galw{position:relative;margin-top:28px}
-.gal{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:4px 2px 14px}
-.gal::-webkit-scrollbar{display:none}
-.gal figure{flex:0 0 calc((100% - 32px)/3);scroll-snap-align:start}
-.galb{position:absolute;top:calc(50% - 30px);width:44px;height:44px;border-radius:50%;border:0;background:#fff;color:var(--red);font-size:24px;font-weight:700;box-shadow:0 6px 16px rgba(110,30,20,.2);cursor:pointer;z-index:2}
-.galb.p{left:-14px}.galb.n{right:-14px}
-.gald{display:flex;justify-content:center;gap:8px;margin-top:6px}
-.gald i{width:9px;height:9px;border-radius:50%;background:var(--line);cursor:pointer;transition:.2s}
-.gald i.on{background:var(--red);width:22px;border-radius:99px}
-.gal figure{margin:0;border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 10px 24px rgba(110,30,20,.12);position:relative}
+.galw{position:relative;margin-top:28px;overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.gal{display:flex;gap:0;width:max-content;padding:4px 0 14px;animation:galmv 30s linear infinite}
+.galw:hover .gal{animation-play-state:paused}
+@keyframes galmv{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.gal figure{flex:0 0 300px;margin:0 16px 0 0;border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 10px 24px rgba(110,30,20,.12);position:relative}
 .gal img{display:block;width:100%;aspect-ratio:1;object-fit:cover}
 .gal figcaption{position:absolute;left:10px;bottom:10px;background:rgba(255,255,255,.92);color:var(--red);font-weight:700;font-size:13px;padding:5px 11px;border-radius:99px}
 .types{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;max-width:780px;margin:26px auto 0}
@@ -118,7 +113,7 @@ footer{text-align:center;font-size:12px;color:var(--mut);padding:26px 16px}
 .pop a.no{display:block;margin-top:12px;font-size:12.5px;color:#8f8580}
 @media (max-width:760px){
  section{padding:44px 0}.steps,.bonus{grid-template-columns:1fr}.uses{grid-template-columns:1fr 1fr}.types{grid-template-columns:1fr}
- .gal{gap:10px}.gal figure{flex-basis:78%}.galb{display:none}.gal figcaption{font-size:11px;left:6px;bottom:6px}.plans{grid-template-columns:1fr}.plan.top{order:-1}.fan img{width:24%}.btn{font-size:16px;padding:16px 22px}
+ .gal{animation-duration:22s}.gal figure{flex-basis:220px;margin-right:10px}.gal figcaption{font-size:11px;left:6px;bottom:6px}.plans{grid-template-columns:1fr}.plan.top{order:-1}.fan img{width:24%}.btn{font-size:16px;padding:16px 22px}
 }
 </style>
 </head>
@@ -139,7 +134,7 @@ footer{text-align:center;font-size:12px;color:var(--mut);padding:26px 16px}
 <section style="background:#fff;padding-top:46px"><div class="wrap">
   <h2 class="t">O que você vai <em>receber</em></h2>
   <p class="sub">Alguns dos 300 modelos do kit, prontos para imprimir, recortar e presentear.</p>
-  <div class="galw"><button class="galb p" aria-label="Anterior">&#8249;</button><div class="gal"><figure><img src="img/m/m02-tags-redondas.webp" alt="Tags redondas com laço" loading="lazy"><figcaption>Tags redondas com laço</figcaption></figure><figure><img src="img/m/m06-etiquetas-barbante.webp" alt="Etiquetas com barbante" loading="lazy"><figcaption>Etiquetas com barbante</figcaption></figure><figure><img src="img/m/m04-tags-bola.webp" alt="Tags bola de Natal" loading="lazy"><figcaption>Tags bola de Natal</figcaption></figure><figure><img src="img/m/m12-tags-arvore.webp" alt="Tags árvore de Natal" loading="lazy"><figcaption>Tags árvore de Natal</figcaption></figure><figure><img src="img/m/m08-toppers-rotulos.webp" alt="Toppers e rótulos" loading="lazy"><figcaption>Toppers e rótulos</figcaption></figure><figure><img src="img/m/m10-cartoes-alunos.webp" alt="Cartões para alunos" loading="lazy"><figcaption>Cartões para alunos</figcaption></figure></div><button class="galb n" aria-label="Próximo">&#8250;</button><div class="gald"></div></div>
+  <div class="galw"><div class="gal"><figure><img src="img/m/m02-tags-redondas.webp" alt="Tags redondas com laço" loading="lazy"><figcaption>Tags redondas com laço</figcaption></figure><figure><img src="img/m/m06-etiquetas-barbante.webp" alt="Etiquetas com barbante" loading="lazy"><figcaption>Etiquetas com barbante</figcaption></figure><figure><img src="img/m/m04-tags-bola.webp" alt="Tags bola de Natal" loading="lazy"><figcaption>Tags bola de Natal</figcaption></figure><figure><img src="img/m/m12-tags-arvore.webp" alt="Tags árvore de Natal" loading="lazy"><figcaption>Tags árvore de Natal</figcaption></figure><figure><img src="img/m/m08-toppers-rotulos.webp" alt="Toppers e rótulos" loading="lazy"><figcaption>Toppers e rótulos</figcaption></figure><figure><img src="img/m/m10-cartoes-alunos.webp" alt="Cartões para alunos" loading="lazy"><figcaption>Cartões para alunos</figcaption></figure><figure><img src="img/m/m02-tags-redondas.webp" alt="Tags redondas com laço" loading="lazy" aria-hidden="true"><figcaption>Tags redondas com laço</figcaption></figure><figure><img src="img/m/m06-etiquetas-barbante.webp" alt="Etiquetas com barbante" loading="lazy" aria-hidden="true"><figcaption>Etiquetas com barbante</figcaption></figure><figure><img src="img/m/m04-tags-bola.webp" alt="Tags bola de Natal" loading="lazy" aria-hidden="true"><figcaption>Tags bola de Natal</figcaption></figure><figure><img src="img/m/m12-tags-arvore.webp" alt="Tags árvore de Natal" loading="lazy" aria-hidden="true"><figcaption>Tags árvore de Natal</figcaption></figure><figure><img src="img/m/m08-toppers-rotulos.webp" alt="Toppers e rótulos" loading="lazy" aria-hidden="true"><figcaption>Toppers e rótulos</figcaption></figure><figure><img src="img/m/m10-cartoes-alunos.webp" alt="Cartões para alunos" loading="lazy" aria-hidden="true"><figcaption>Cartões para alunos</figcaption></figure></div></div>
 </div></section>
 
 <section><div class="wrap">
@@ -283,17 +278,6 @@ document.querySelectorAll('[data-basico]').forEach(function(e){e.onclick=functio
 document.querySelectorAll('[data-completo]').forEach(function(e){e.onclick=function(ev){ev.preventDefault();go(CK.completo)}});
 document.querySelector('[data-oferta]').onclick=function(ev){ev.preventDefault();go(CK.oferta)};
 document.querySelector('[data-basico-final]').onclick=function(ev){ev.preventDefault();go(CK.basico)};
-(function(){var g=document.querySelector('.gal'),f=g.querySelectorAll('figure'),d=document.querySelector('.gald'),t,cur=0;
-f.forEach(function(_,k){var i=document.createElement('i');i.onclick=function(){to(k);rs()};d.appendChild(i)});
-function step(){return f[1]?f[1].offsetLeft-f[0].offsetLeft:g.clientWidth}
-function last(){return Math.max(0,Math.round((g.scrollWidth-g.clientWidth)/step()))}
-function to(k){var m=last();if(k>m)k=0;if(k<0)k=m;g.scrollTo({left:k*step(),behavior:'smooth'})}
-function mark(){cur=Math.round(g.scrollLeft/step());var m=last();d.querySelectorAll('i').forEach(function(e,k){e.classList.toggle('on',k===cur);e.style.display=k>m?'none':''})}
-g.addEventListener('scroll',function(){clearTimeout(g._t);g._t=setTimeout(mark,80)});
-document.querySelector('.galb.p').onclick=function(){to(cur-1);rs()};document.querySelector('.galb.n').onclick=function(){to(cur+1);rs()};
-function rs(){clearInterval(t);t=setInterval(function(){to(cur+1)},3000)}
-g.addEventListener('touchstart',function(){clearInterval(t)},{passive:true});g.addEventListener('touchend',rs);
-mark();rs()})();
 </script>
 </body>
 </html>
