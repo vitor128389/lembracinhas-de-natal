@@ -171,16 +171,19 @@ footer{text-align:center;font-size:12px;color:var(--mut);padding:26px 16px}
 // Checkout Wiapy · Básico R$10 · Completo R$27 · oferta do popup R$17
 var CK={basico:'https://pay.wiapy.com/Ju0BXLSIpG_v',completo:'https://pay.wiapy.com/TIjk8p4ItVSg',oferta:'https://pay.wiapy.com/woBjk_g1v8b'};
 function go(u){if(!u){alert('Checkout ainda não configurado.');return}var q=location.search;if(q&&u.indexOf('?')<0)u+=q;location.href=u}
-// galeria: desliza sozinha, para enquanto o dedo arrasta
+// galeria: desliza sozinha (posicao calculada pelo relogio, nao pela taxa de quadros)
 (function(){var w=document.querySelector('.galw');var g=w&&w.firstElementChild;if(!w||!g)return;
- var acc=0,last=0,hold=0,vis=true,SPD=0.115;
- function grab(){hold=1}
- function drop(){acc=w.scrollLeft;setTimeout(function(){hold=0},1400)}
+ var SPD=0.115,base=0,t0=0,hold=0,vis=true;
+ function anchor(){base=w.scrollLeft;t0=0}
+ function grab(){hold=1;anchor()}
+ function drop(){anchor();setTimeout(function(){hold=0},1400)}
  ['pointerdown','touchstart','mousedown'].forEach(function(e){w.addEventListener(e,grab,{passive:true})});
- ['pointerup','touchend','touchcancel','mouseup','mouseleave'].forEach(function(e){w.addEventListener(e,drop,{passive:true})});
- if(window.IntersectionObserver)new IntersectionObserver(function(es){vis=es[0].isIntersecting}).observe(w);
- function step(t){if(!last)last=t;var dt=Math.min(t-last,60);last=t;
-  if(!hold&&vis&&!document.hidden){var half=g.scrollWidth/2;if(half>0){acc+=SPD*dt;if(acc>=half)acc-=half;w.scrollLeft=acc}}
+ ['pointerup','touchend','touchcancel','mouseup'].forEach(function(e){w.addEventListener(e,drop,{passive:true})});
+ document.addEventListener('visibilitychange',anchor);
+ if(window.IntersectionObserver)new IntersectionObserver(function(es){vis=es[0].isIntersecting;if(vis)anchor()}).observe(w);
+ function step(t){
+  if(!hold&&vis&&!document.hidden){var half=g.scrollWidth/2;
+   if(half>0){if(!t0)t0=t;var p=(base+(t-t0)*SPD)%half;w.scrollLeft=p}}
   requestAnimationFrame(step)}
  requestAnimationFrame(step)})();
 var ov=document.getElementById('ov');
