@@ -44,8 +44,9 @@ h2.t{font-weight:800;font-size:clamp(24px,5vw,32px);line-height:1.2;text-align:c
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(180deg,#DC1F3F,var(--red2));color:#fff;font-weight:800;font-size:16px;letter-spacing:.3px;text-transform:uppercase;text-decoration:none;border:0;border-radius:14px;padding:17px 32px;box-shadow:0 10px 24px rgba(200,16,46,.32);cursor:pointer;transition:transform .15s}
 .btn:hover{transform:translateY(-2px)}.btn.alt{background:#fff;color:var(--ink);border:2px solid var(--ink);box-shadow:none}
 .micro{color:var(--mut);font-size:12.5px;margin-top:12px}
-.galw{margin:26px 0 34px;overflow:hidden}.gal{display:flex;width:max-content;animation:galmv 24s linear infinite;will-change:transform}.galw:hover .gal{animation-play-state:paused}
-@keyframes galmv{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.galw{margin:26px 0 34px;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.galw::-webkit-scrollbar{display:none}
+.gal{display:flex;width:max-content}
 .gal figure{flex:0 0 250px;margin-right:14px;border-radius:18px;overflow:hidden;box-shadow:0 8px 20px rgba(60,30,20,.12)}.gal img{width:100%;aspect-ratio:1;object-fit:cover}
 .item{margin-top:34px}.ih{display:flex;gap:12px;align-items:center;margin-bottom:14px}.ih span{font-size:26px}.ih small{display:inline-block;background:var(--red);color:#fff;font-size:11px;font-weight:700;border-radius:20px;padding:3px 12px;margin-bottom:4px}
 .ih h3{font-size:18px;font-weight:700;line-height:1.25}
@@ -84,7 +85,6 @@ footer{text-align:center;font-size:12px;color:var(--mut);padding:26px 16px}
 .pop .btn{width:100%;font-size:14.5px}.pop a.no{display:block;margin-top:12px;font-size:12.5px;color:#8f8580}
 @media (max-width:640px){section{padding:44px 0}.chips{grid-template-columns:1fr}.plans{grid-template-columns:1fr}.plan.top{order:-1}
  .gal figure{flex-basis:200px}
- .gal{animation-duration:20s}
 }
 </style>
 </head>
@@ -171,6 +171,18 @@ footer{text-align:center;font-size:12px;color:var(--mut);padding:26px 16px}
 // Checkout Wiapy · Básico R$10 · Completo R$27 · oferta do popup R$17
 var CK={basico:'https://pay.wiapy.com/Ju0BXLSIpG_v',completo:'https://pay.wiapy.com/TIjk8p4ItVSg',oferta:'https://pay.wiapy.com/woBjk_g1v8b'};
 function go(u){if(!u){alert('Checkout ainda não configurado.');return}var q=location.search;if(q&&u.indexOf('?')<0)u+=q;location.href=u}
+// galeria: desliza sozinha, para enquanto o dedo arrasta
+(function(){var w=document.querySelector('.galw');var g=w&&w.firstElementChild;if(!w||!g)return;
+ var acc=0,last=0,hold=0,vis=true,SPD=0.115;
+ function grab(){hold=1}
+ function drop(){acc=w.scrollLeft;setTimeout(function(){hold=0},1400)}
+ ['pointerdown','touchstart','mousedown'].forEach(function(e){w.addEventListener(e,grab,{passive:true})});
+ ['pointerup','touchend','touchcancel','mouseup','mouseleave'].forEach(function(e){w.addEventListener(e,drop,{passive:true})});
+ if(window.IntersectionObserver)new IntersectionObserver(function(es){vis=es[0].isIntersecting}).observe(w);
+ function step(t){if(!last)last=t;var dt=Math.min(t-last,60);last=t;
+  if(!hold&&vis&&!document.hidden){var half=g.scrollWidth/2;if(half>0){acc+=SPD*dt;if(acc>=half)acc-=half;w.scrollLeft=acc}}
+  requestAnimationFrame(step)}
+ requestAnimationFrame(step)})();
 var ov=document.getElementById('ov');
 document.querySelector('.pop .x').onclick=function(){ov.classList.remove('on')};
 ov.onclick=function(e){if(e.target===ov)ov.classList.remove('on')};
