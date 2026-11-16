@@ -173,7 +173,7 @@ var CK={basico:'https://pay.wiapy.com/Ju0BXLSIpG_v',completo:'https://pay.wiapy.
 function go(u){if(!u){alert('Checkout ainda não configurado.');return}var q=location.search;if(q&&u.indexOf('?')<0)u+=q;location.href=u}
 // galeria: desliza sozinha (posicao calculada pelo relogio, nao pela taxa de quadros)
 (function(){var w=document.querySelector('.galw');var g=w&&w.firstElementChild;if(!w||!g)return;
- var SPD=0.115,base=0,t0=0,hold=0,vis=true;
+ var SPD=0.085,base=0,t0=0,hold=0,vis=true;
  function anchor(){base=w.scrollLeft;t0=0}
  function grab(){hold=1;anchor()}
  function drop(){anchor();setTimeout(function(){hold=0},1400)}
